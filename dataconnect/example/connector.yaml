@@ -1,0 +1,13 @@
+connectorId: example
+generate:
+  javascriptSdk:
+    - outputDir: ../../remi-engine/src/dataconnect-generated
+      package: "@dataconnect/generated"
+      packageJsonDir: ../../remi-engine
+      react: false
+      angular: false
+    - outputDir: ../../kitch-mobile/src/dataconnect-generated
+      package: "@dataconnect/generated"
+      packageJsonDir: ../../kitch-mobile
+      react: true
+      angular: false

@@ -1,0 +1,43 @@
+type User @table {
+  displayName: String!
+  email: String!
+  createdAt: Timestamp!
+  dietaryRestrictions: [String]
+  photoUrl: String
+  subscription: SubscriptionType
+}
+
+type SubscriptionType @table {
+  name: String!
+  price: Float!
+  duration: String!
+}
+
+type Recipe @table {
+  title: String!
+  sourceUrl: String!
+  createdAt: Timestamp!
+  updatedAt: Timestamp!
+  description: String
+  preparationSteps: String
+  videoSyncInstructions: String
+  user: User
+}
+
+type Ingredient @table {
+  name: String!
+  amount: Float!
+  unit: String!
+  aisleCategory: String!
+  notes: String
+  recipe: Recipe
+}
+
+type PantryItem @table {
+  ingredientName: String!
+  quantity: Float!
+  unit: String!
+  expirationDate: Date
+  purchaseDate: Date
+  user: User
+}

@@ -1,0 +1,19 @@
+# Refreshing connector config
+query ListRecipes @auth(level: USER) {
+  recipes {
+    id
+    title
+    sourceUrl
+    description
+    createdAt
+  }
+}
+
+query ListPantryItems @auth(level: USER) {
+  pantryItems {
+    id
+    ingredientName
+    quantity
+    unit
+  }
+}
